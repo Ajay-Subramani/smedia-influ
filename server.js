@@ -18,8 +18,7 @@ const formSchema = new mongoose.Schema({
   mobilenumber: String,
   location: String,
   comment: String,
-  genderM: String,
-  genderF: String,
+  gender: String,
   person: String,
 });
 
