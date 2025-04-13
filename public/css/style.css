@@ -923,9 +923,7 @@ padding-bottom: 0.5rem;
 }
 .FORMS {
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
     background: linear-gradient(to top, royalblue, white);
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
