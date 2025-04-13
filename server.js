@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://localhost:27017/Enquiry");
+mongoose.connect("mongodb+srv://ajaysubramani:mongodb%40ajay%40123@cluster0.f4yxo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 const formSchema = new mongoose.Schema({
   fname: String,
