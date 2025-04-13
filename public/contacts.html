@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SMedia Influ</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="https://kit.fontawesome.com/091af998ec.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header style="min-height: 75vh; background: linear-gradient(rgba(21, 27, 107, 0.3),rgba(3, 41, 77, 0.8)),url(image/social8.jpg); background-size: cover; background-position: center; position: relative;">
+            <div class="header-content flex-design">
+                <div class="logo">
+                    <img src="image/smi4.png" alt="" />
+                </div>
+                <div class="nav-links">
+                    <ul class="nav-links display flex-design">
+                        <li><a href="index.html">Home</a></li>
+                        <br>
+                        <li><a href="about.html">About</a></li>
+                        <br>
+                        <li><a href="work.html">Work</a></li>
+                        <br>
+                        <li><a href="service.html">Service</a></li>
+                        <br>
+                        <li><a href="contacts.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="burger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="text-10">
+                <h3><b>SMedia Influ</b></h3>
+            </div>
+            <div class="text-11">
+                <h3>Influencer Marketing Agency</h3>
+            </div>
+        </header>
+        <section class="js">
+           <div class="js-c">  
+               <div class="js-h heading">
+                    <u><h3>Get In Touch</h3></u>
+               </div>
+               <div class="js-t mb">
+                    <p>Will you want our service? Why are you waiting? Join us by completing the form below. Depending on the category you choose, such as brand, customer, or influencer, after submitting the form, we get your form. After we have verified your identity, we will get in touch with you within a few hours via phone call or email. At that point, you may join our team and work on every project to your delight. It helped us establish strong bonds with you, and our services made you happy.</p>
+               </div>
+            </div>
+        </section>
+        <section class="enquiry">
+            <div class="en-c">
+               <div class="en-h heading mb">
+                <u><h3>How Can We Help?</h3></u>
+               </div>
+               <div class="en-txt">
+                <p>We're always ready to help you! Our detailed information is given on the corresponding pages; for more detail, check them out. For further inquiry or doubt, please fill up the form and ask your question in the given text area. After the form is submitted within a few hours, we will clear up your doubt. If you're interested in our service, then don't waste the time and submit the form! </p>
+               </div>
+            </div>
+        </section>
+        <section class="FORMS">
+         <div class="form-container">
+            <div class="form-heading">Let's Join With Us</div>
+            <form method="POST" id="form">
+                <div class="form-details">
+                    <div class="container-card">
+                        <span class="detail-card">First Name:</span>
+                        <input type="text" placeholder=" Enter Your Fisrt Name" name="fname" required>
+                    </div>
+                    <div class="container-card">
+                        <span class="detail-card">Last Name:</span>
+                        <input type="text" placeholder="Enter Your last Name" name="lname" required>
+                    </div>
+                    <div class="container-card">
+                        <span class="detail-card">E-mail:</span>
+                        <input type="email" placeholder="Enter Your maild Id" name="email" required>
+                    </div>
+                    <div class="container-card">
+                        <span class="detail-card">Mobile Number:</span>
+                        <input type="number" placeholder="Enter Your Mobile number" name="mobilenumber" required>
+                    </div>
+                    <div class="container-card">
+                        <span class="detail-card">Location:</span>
+                        <input type="text" placeholder="Enter Your location" name="location" required>
+                    </div>
+                    <div class="container-card">
+                        <span class="detail-card">Comment:</span>
+                        <textarea Name="comment" placeholder="Enter Your Needs" required></textarea>
+                    </div>
+                    <script>
+                        const textarea = document.querySelector("textarea");
+                        textarea.addEventListener(keyup, e =>{
+                            textarea.style.height ="35px";
+                            let scHieght = e.target.scrollHeight;
+                            textarea.style.height =`${scHieght}px`;
+                        });
+                    </script>
+                </div>
+                <div class="circle">
+                <div class="circle-form">
+                         <span class="c-title">Gender:</span>
+                     <div class="detail-c">
+                        <input type="radio" id="Male" Name="genderM" style="color: var(--primary);" required>
+                        <label for="Male">Male</label>
+                        <input type="radio" id="Female" Name="genderF" style="color: var(--primary);" required>
+                        <label for="Female">Female</label>
+                     </div>
+                </div>
+                <div class="circle-form">
+                         <span class="c-title">Category:</span>
+                     <div class="detail-c">
+                        <input type="radio" id="brand" Name="person" style="color: var(--primary);" required>
+                        <label for="brand">Brand</label>
+                        <input type="radio" id="influencer" Name="person" style="color: var(--primary);" required>
+                        <label for="influencer">Influencer</label>
+                        <input type="radio" id="Customer" Name="person" style="color: var(--primary);" required>
+                        <label for="Customer">Article</label>
+                        <input type="radio" id="others" Name="person" style="color: var(--primary);" required>
+                        <label for="Customer">Others</label>
+                     </div>
+                </div>
+                </div>
+                    <div class="button">
+                        <input type="submit" name="send" Value="Submit">
+                    </div>
+            </form>
+            <script>
+                document.getElementById("form").addEventListener("submit", async function (e) {
+                  e.preventDefault();
+              
+                  const formData = new FormData(this);
+                  const data = Object.fromEntries(formData.entries());
+              
+                  try {
+                    const response = await fetch("/submit-form", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json"
+                      },
+                      body: JSON.stringify(data)
+                    });
+              
+                    if (response.ok) {
+                      alert("✅ Form submitted successfully!");
+                      this.reset();
+                    } else {
+                      alert("❌ Failed to submit form.");
+                    }
+                  } catch (error) {
+                    alert("❌ Error connecting to server.");
+                    console.error(error);
+                  }
+                });
+              </script>              
+         </div> 
+        </section>
+       <section>
+        <div class="tk-c">
+            <p>     Thank you for choosing us. As soon as possible, our team will contact you through mail or phone. Once you submit the form, please Kindly wait for further processing. Don't resubmit the form again and again. Once again, thank you for choosing SMedia Influ. We do our best for you.</p>
+        </div>
+        <div class="space"></div>
+       </section>
+       <script src="javascript/text4.js"></script>
+       <script src="javascript/file.js"></script>
+       <footer>
+        <div class="footer-content ">
+           <div class="footer-top">
+                <div class="footer-h">
+                    <div class="footer-logo">
+                            <img src="image/smi4.png" alt="" />
+                            <p>We turn our ideas into your success</p>
+                    </div>
+                    <div class="f">
+                        <div class="soc-acc">
+                            <a href="https://www.instagram.com/smediainflu?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank"><img src="image/Icon 2.png"/><p>   Instagram</p></a>
+                            <a href="https://www.facebook.com/profile.php?id=100093109875652" target="_blank"><img src="image/Icon 4.png"/><p>    Facebook</p></a>
+                            <a href="https://www.youtube.com/@SMedia_Influ" target="_blank"><img src="image/Icon 3.png"/><p>    You Tube</p></a>
+                            <a href="https://www.linkedin.com/in/smi-ima-21b431279/" target="_blank"><img src="image/Icon 1.png"/><p>    linkedin</p></a>
+                            <a href="https://twitter.com/sm_ima23103?t=s7RDzOMTQ9o0o0jzCw-DNw&s=09" target="_blank"><img src="image/Icon 5.png"/><p>    Twitter</p></a>
+                        </div> 
+                    </div>
+                </div>
+                <div class="fc">
+                    <div class="fh">
+                        <div class="services-heading">
+                            <h3>Our Service</h3>
+                        </div>
+                        <div class="our-service">
+                            <ul>
+                                <li><a href="service.html.#section1" target="_blank"><p>Influencer Marketing</p></a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="service.html.#section2" target="_blank"><p>Article Making</p></a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="service.html.#section3" target="_blank"><p>Logo Designing</p></a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="service.html.#section4" target="_blank"><p>Video Editing</p></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fh">
+                        <div class="contacts-heading">
+                           <h3>Contact Us</h3>
+                        </div>
+                        <div class="footer-detail">
+                            <div class="footer-address">
+                                <p><i class="fa-solid fa-location-dot"></i>  Chennai,Tamil Nadu,India</p>
+                            </div>
+                            <div class="footer-mail">
+                                <p><i class="fa-solid fa-envelope-open-text"></i>  smima162023@gmail.com</p>
+                            </div>
+                            <div class="footer-mail1">
+                                <p><i class="fa-solid fa-phone"></i>  +91 9043529672</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+             <p>Copyright &copy; | SMI </p>
+        </div>
+</footer>
+    </body>
+</html>
