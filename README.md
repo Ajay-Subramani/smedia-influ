@@ -73,7 +73,7 @@ If you're hosting only the frontend, you can also use **Vercel**.
 
 [ Click Here to View Live Project]
   
- link: https://smedia-influ.onrender.com
+[ link: https://smedia-influ.onrender.com](https://smedia-influ.onrender.com)
 
 ---
 
