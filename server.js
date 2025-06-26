@@ -5,8 +5,8 @@ const path = require("path");
 
 const app = express();
 const PORT = 3000;
-app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect("mongodb://ajaysubramani:mongodb@cluster0-shard-00-00.f4yxo.mongodb.net:27017,cluster0-shard-00-01.f4yxo.mongodb.net:27017,cluster0-shard-00-02.f4yxo.mongodb.net:27017/?replicaSet=atlas-12d1ll-shard-0&ssl=true&authSource=admin&retryWrites=true&w=majority&appName=Cluster0");
